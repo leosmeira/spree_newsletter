@@ -8,10 +8,10 @@ module Spree
         
         format.html do
           if newsletter.new_record?
-            flash[:error] = "Error when attempted to subscribe!"
+            flash[:error] = "Erro na tentativa de cadastro!"
             redirect_to root_path
           else
-            flash[:notice] = "#{newsletter.email} - Subscribd!"
+            flash[:notice] = "#{newsletter.email} - cadastrado!"
             redirect_to root_path
           end
         end

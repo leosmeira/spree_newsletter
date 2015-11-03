@@ -17,7 +17,8 @@ class Spree::Admin::Newsletter::NewslettersController < ApplicationController
   end
 
   def destroy
-    ::Newsletter::Newsletter.destroy(id: params[:id])
+    newsletter = Spree::Newsletter.find(params[:id])
+    newsletter.destroy
     redirect_to admin_newsletter_dashboard_path
   end
 
